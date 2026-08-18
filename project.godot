@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://d0o6f7wocehij"
 
 GlobalLevelManager="*uid://0fqm4ur6wwss"
 GlobalPlayerManager="*uid://if1icpxpc4y3"
+PlayerHud="*uid://2q6sa6jooiie"
 
 [display]
 
