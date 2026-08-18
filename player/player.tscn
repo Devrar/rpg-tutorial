@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://d4afr641gdoyx" path="res://player/scripts/walk_state.gd" id="5_qjkh3"]
 [ext_resource type="Script" uid="uid://bfrsxk47kgjvs" path="res://player/scripts/attack_state.gd" id="6_g6k8r"]
 [ext_resource type="AudioStream" uid="uid://dmfn5yc4s0ij6" path="res://player/audio/SwordSwoosh.wav" id="8_rgyib"]
+[ext_resource type="Script" uid="uid://c808nvej5kmes" path="res://player/interactions.gd" id="10_2ieo8"]
+[ext_resource type="Script" uid="uid://btm53n2xxdf6y" path="res://general_nodes/hurtbox/hurtbox.gd" id="10_8t03j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0plbj"]
 
@@ -309,7 +311,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 resource_name = "idle_down"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -326,7 +328,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 resource_name = "idle_side"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -343,7 +345,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_qjkh3"]
 resource_name = "idle_up"
-length = 0.39999999999999997
+length = 0.4
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -423,6 +425,9 @@ _data = {
 &"walk_up": SubResource("Animation_rgyib")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_l5ibu"]
+radius = 20.0
+
 [node name="Player" type="CharacterBody2D" unique_id=761234979]
 collision_mask = 16
 motion_mode = 1
@@ -476,3 +481,19 @@ attack_sound = ExtResource("8_rgyib")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio" unique_id=260706603]
 max_polyphony = 4
+
+[node name="Interactions" type="Node2D" parent="." unique_id=130422620]
+script = ExtResource("10_2ieo8")
+
+[node name="Hurtbox" type="Area2D" parent="Interactions" unique_id=1574852495]
+position = Vector2(0, 15)
+collision_layer = 0
+collision_mask = 256
+monitoring = false
+monitorable = false
+script = ExtResource("10_8t03j")
+metadata/_custom_type_script = "uid://btm53n2xxdf6y"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Hurtbox" unique_id=2057333236]
+shape = SubResource("CircleShape2D_l5ibu")
+debug_color = Color(0.71416295, 0, 0.23538184, 0.41960785)
