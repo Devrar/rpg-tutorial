@@ -2,20 +2,28 @@ class_name Player
 extends CharacterBody2D
 
 signal direction_changed(new_direction: Vector2)
+signal player_damaged(hurtbox: Hurtbox)
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
+var invulnerable: bool = false
+var hp: int = 6
+var max_hp: int = 6
 
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $PlayerStateMachine
+@onready var hitbox: Hitbox = $Hitbox
 
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.initialize(self)
+	hitbox.damage_taken.connect(_take_damage)
+	update_hp(99)
 
 
 func _process(_delta: float) -> void:
@@ -56,3 +64,28 @@ func anim_direction() -> String:
 	else:
 		return "side"
 
+
+func _take_damage(hurtbox: Hurtbox) -> void:
+	if invulnerable:
+		return
+	update_hp(-hurtbox.damage)
+
+	if hp > 0:
+		player_damaged.emit(hurtbox)
+	else:
+		player_damaged.emit(hurtbox)
+		update_hp(99)
+
+
+func update_hp(delta: int) -> void:
+	hp = clampi(hp + delta, 0, max_hp)
+
+
+func make_invulnerable(invulnerable_duration: float) -> void:
+	invulnerable = true
+	hitbox.monitoring = false
+
+	await get_tree().create_timer(invulnerable_duration).timeout
+
+	invulnerable = false
+	hitbox.monitoring = true

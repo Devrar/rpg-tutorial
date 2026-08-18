@@ -8,6 +8,7 @@ extends EnemyState
 @export_category("AI")
 
 var direction: Vector2
+var damage_position: Vector2
 
 
 func init() -> void:
@@ -17,7 +18,7 @@ func init() -> void:
 func enter() -> void:
 	enemy.invulnerable = true
 
-	direction = enemy.global_position.direction_to(enemy.player.global_position)
+	direction = enemy.global_position.direction_to(damage_position)
 
 	enemy.set_direction(direction)
 	enemy.velocity = direction * (-knockback_speed)
@@ -31,7 +32,8 @@ func process(delta: float) -> EnemyState:
 	return self
 
 
-func _on_enemy_destroyed() -> void:
+func _on_enemy_destroyed(hurtbox: Hurtbox) -> void:
+	damage_position = hurtbox.global_position
 	state_machine.change_state(self)
 
 

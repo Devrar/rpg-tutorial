@@ -10,6 +10,7 @@ extends EnemyState
 
 var direction: Vector2
 var animation_finished: bool = false
+var damage_position: Vector2
 
 
 func init() -> void:
@@ -20,7 +21,7 @@ func enter() -> void:
 	enemy.invulnerable = true
 	animation_finished = false
 
-	direction = enemy.global_position.direction_to(enemy.player.global_position)
+	direction = enemy.global_position.direction_to(damage_position)
 
 	enemy.set_direction(direction)
 	enemy.velocity = direction * (-knockback_speed)
@@ -43,7 +44,8 @@ func process(delta: float) -> EnemyState:
 	return self
 
 
-func _on_enemy_damaged() -> void:
+func _on_enemy_damaged(hurtbox: Hurtbox) -> void:
+	damage_position = hurtbox.global_position
 	state_machine.change_state(self)
 
 

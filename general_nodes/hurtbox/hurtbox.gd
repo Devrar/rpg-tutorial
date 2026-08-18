@@ -11,4 +11,4 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is Hitbox:
 		var hitbox = area as Hitbox
-		hitbox.take_damage(damage)
+		hitbox.take_damage(self)
