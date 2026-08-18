@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalLevelManager="*uid://0fqm4ur6wwss"
+GlobalPlayerManager="*uid://if1icpxpc4y3"
 
 [display]
 
