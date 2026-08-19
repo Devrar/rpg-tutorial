@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://brpvkbj8ht6co" path="res://levels/scripts/level.gd" id="1_l2ak3"]
 [ext_resource type="PackedScene" uid="uid://cgyx6volpmtau" path="res://tile_maps/grass_01.tscn" id="1_xlvri"]
 [ext_resource type="PackedScene" uid="uid://csd3pi0y41ax4" path="res://levels/player_spawn.tscn" id="2_l2ak3"]
+[ext_resource type="PackedScene" uid="uid://bq55qpw2rtjc3" path="res://enemies/slime/slime.tscn" id="4_fl0jm"]
+[ext_resource type="PackedScene" uid="uid://c8e2c6ar5xy4j" path="res://levels/level_transition.tscn" id="5_dh2nq"]
 
 [node name="01" type="Node2D" unique_id=1557618750]
 script = ExtResource("1_l2ak3")
@@ -12,3 +14,23 @@ layer_0/tile_data = PackedInt32Array(-65538, 917504, 5, -2, 917504, 6, 65534, 91
 
 [node name="PlayerSpawn" parent="." unique_id=1270944581 instance=ExtResource("2_l2ak3")]
 position = Vector2(397, 67)
+
+[node name="Slime" parent="." unique_id=777244423 instance=ExtResource("4_fl0jm")]
+position = Vector2(146, 81)
+
+[node name="Slime2" parent="." unique_id=1544303502 instance=ExtResource("4_fl0jm")]
+position = Vector2(263, 215)
+
+[node name="Slime3" parent="." unique_id=246518070 instance=ExtResource("4_fl0jm")]
+position = Vector2(32, 207)
+
+[node name="LevelTransition" parent="." unique_id=895021473 instance=ExtResource("5_dh2nq")]
+position = Vector2(224, 320)
+level = "uid://chxswvoome35i"
+size = 6
+side = 3
+
+[node name="LevelTransition2" parent="." unique_id=303510087 instance=ExtResource("5_dh2nq")]
+position = Vector2(512, 192)
+level = "uid://cbeikwvkqdgtk"
+side = 1

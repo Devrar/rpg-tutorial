@@ -19,3 +19,14 @@ func add_player_instance() -> void:
 
 func set_player_position(new_position: Vector2) -> void:
 	player.global_position = new_position
+
+
+func set_as_parent(parent: Node2D) -> void:
+	if player.get_parent():
+		player.get_parent().remove_child(player)
+	parent.add_child(player)
+
+
+func unparent_player(parent: Node2D) -> void:
+	print("[!] Unparenting player")
+	parent.remove_child(player)

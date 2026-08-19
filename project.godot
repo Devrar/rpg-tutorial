@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RPG Tutorial"
-run/main_scene="res://playground.tscn"
+run/main_scene="uid://cellru72iplkc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://d0o6f7wocehij"
 GlobalLevelManager="*uid://0fqm4ur6wwss"
 PlayerHud="*uid://2q6sa6jooiie"
 GlobalPlayerManager="*uid://if1icpxpc4y3"
+SceneTransition="*uid://lokee2morxo7"
 
 [display]
 
