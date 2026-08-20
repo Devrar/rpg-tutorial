@@ -18,6 +18,8 @@ func init() -> void:
 
 
 func enter() -> void:
+	print("Entered stun state")
+
 	enemy.invulnerable = true
 	animation_finished = false
 

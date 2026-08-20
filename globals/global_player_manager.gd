@@ -1,5 +1,7 @@
 extends Node
 
+signal interact_pressed
+
 var player: Player
 var player_spawned: bool = false
 

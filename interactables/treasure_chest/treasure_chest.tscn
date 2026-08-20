@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://cm16ewcuryw33"]
+
+[ext_resource type="Script" uid="uid://53gsh4x83wx5" path="res://interactables/treasure_chest/treasure_chest.gd" id="1_rolan"]
+[ext_resource type="Texture2D" uid="uid://n1ci77s1gdwe" path="res://interactables/treasure_chest/treasure-chest.png" id="2_xjfm2"]
+[ext_resource type="Texture2D" uid="uid://4jq7v5q7qsrg" path="res://items/sprites/items.png" id="3_xjfm2"]
+[ext_resource type="AudioStream" uid="uid://b5qu3phj6iwqw" path="res://interactables/treasure_chest/treasure-open.wav" id="4_wqj8h"]
+[ext_resource type="PackedScene" uid="uid://6a6ciif3xfe" path="res://general_nodes/persistent_data_handler/persistent_data_handler.tscn" id="5_5t0pk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rolan"]
+atlas = ExtResource("3_xjfm2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Animation" id="Animation_wqj8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ItemSprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -13)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemSprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xjfm2"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5t0pk"]
+resource_name = "open_chest"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_wqj8h")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemSprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.10000001, 0.3, 0.5, 1),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, -13), Vector2(0, -40), Vector2(0, -21), Vector2(0, -21)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ItemSprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.20000002, 0.3, 0.5, 0.70000005, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1.8247963, 1.8247963, 1.8247963, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0epee"]
+resource_name = "opened"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItemSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqj8h"]
+_data = {
+&"RESET": SubResource("Animation_wqj8h"),
+&"closed": SubResource("Animation_xjfm2"),
+&"open_chest": SubResource("Animation_5t0pk"),
+&"opened": SubResource("Animation_0epee")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0plbj"]
+size = Vector2(30, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5ibu"]
+size = Vector2(36, 18)
+
+[node name="TreasureChest" type="Node2D" unique_id=1384981162]
+process_mode = 3
+script = ExtResource("1_rolan")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1509759620]
+position = Vector2(0, -13)
+texture = ExtResource("2_xjfm2")
+hframes = 2
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=2089662557]
+position = Vector2(0, -13)
+texture = SubResource("AtlasTexture_rolan")
+
+[node name="Label" type="Label" parent="ItemSprite" unique_id=1468132111]
+offset_left = 1.0
+offset_top = -12.0
+offset_right = 41.0
+offset_bottom = 11.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1285474449]
+libraries/ = SubResource("AnimationLibrary_wqj8h")
+autoplay = &"closed"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1502616271]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=823694386]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1296301480]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_0plbj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1165198443]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1126598554]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_l5ibu")
+debug_color = Color(0, 0.64705884, 0.1882353, 0.41960785)
+
+[node name="IsOpen" parent="." unique_id=775285575 instance=ExtResource("5_5t0pk")]

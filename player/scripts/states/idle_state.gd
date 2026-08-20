@@ -19,4 +19,6 @@ func process(_delta: float) -> State:
 func handle_input(event: InputEvent) -> State:
 	if event.is_action_pressed("attack"):
 		return attack
+	if event.is_action_pressed("interact"):
+		GlobalPlayerManager.interact_pressed.emit()
 	return self
