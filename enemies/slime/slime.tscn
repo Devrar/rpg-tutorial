@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://ckv1h2k2jfauu" path="res://enemies/slime/DestroySmoke.png" id="9_kag0e"]
 [ext_resource type="Script" uid="uid://bn60wv3hrxt3o" path="res://enemies/scripts/states/enemy_stun_state.gd" id="11_0oddt"]
 [ext_resource type="Script" uid="uid://bcwnu45wm4a8g" path="res://enemies/scripts/states/enemy_destroy_state.gd" id="12_0oddt"]
+[ext_resource type="Script" uid="uid://2xvqpww55kyx" path="res://enemies/drop_data.gd" id="13_mwtj1"]
+[ext_resource type="Resource" uid="uid://x8wo4h0dxgvg" path="res://items/gem.tres" id="14_im24l"]
+[ext_resource type="Resource" uid="uid://b76wbymrrgoua" path="res://items/apple.tres" id="15_im24l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0plbj"]
 radius = 13.038404
@@ -707,6 +710,20 @@ _data = {
 &"walk_up": SubResource("Animation_5ctnu")
 }
 
+[sub_resource type="Resource" id="Resource_0plbj"]
+script = ExtResource("13_mwtj1")
+item = ExtResource("14_im24l")
+probability = 66.0
+max_amount = 3
+metadata/_custom_type_script = "uid://2xvqpww55kyx"
+
+[sub_resource type="Resource" id="Resource_mwtj1"]
+script = ExtResource("13_mwtj1")
+item = ExtResource("15_im24l")
+probability = 33.0
+max_amount = 3
+metadata/_custom_type_script = "uid://2xvqpww55kyx"
+
 [sub_resource type="Animation" id="Animation_v3fw7"]
 length = 0.001
 tracks/0/type = "value"
@@ -771,6 +788,7 @@ _data = {
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_6326o")
+hp = 1
 
 [node name="Hitbox" parent="." unique_id=1277982297 instance=ExtResource("2_v3fw7")]
 
@@ -823,6 +841,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine" unique_id=448132055]
 script = ExtResource("12_0oddt")
+drops = Array[ExtResource("13_mwtj1")]([SubResource("Resource_0plbj"), SubResource("Resource_mwtj1")])
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1051524017]
 max_polyphony = 4
