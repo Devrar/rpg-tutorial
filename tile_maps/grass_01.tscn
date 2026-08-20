@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c68631mefy71i" path="res://tile_maps/sprites/Grass-01.png" id="1_hbhgy"]
 [ext_resource type="Script" uid="uid://6co3vbq8odhf" path="res://tile_maps/level_tile_map.gd" id="2_dfaq2"]
+[ext_resource type="Texture2D" uid="uid://yi62hdm4hvnb" path="res://tile_maps/sprites/dungeon_entrance.png" id="2_dn6lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfaq2"]
 texture = ExtResource("1_hbhgy")
@@ -464,6 +465,27 @@ texture_region_size = Vector2i(32, 32)
 14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -16, 16, 8, 11)
 15:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nn1o"]
+texture = ExtResource("2_dn6lp")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 5, -16, 6, -2, 4, 16, -16, 16)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -5, -16, -6, -2, -4, 16, 16, 16)
+
 [sub_resource type="TileSet" id="TileSet_wjlg5"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 16
@@ -472,6 +494,7 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Path"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_dfaq2")
+sources/1 = SubResource("TileSetAtlasSource_5nn1o")
 
 [node name="Grass-01" type="TileMap" unique_id=466529726]
 z_index = -1
