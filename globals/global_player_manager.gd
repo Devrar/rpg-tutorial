@@ -4,6 +4,7 @@ var player: Player
 var player_spawned: bool = false
 
 const PLAYER = preload("res://player/player.tscn")
+const INVENTORY_DATA = preload("res://gui/pause_menu/inventory/player_inventory.tres")
 
 
 func _ready() -> void:

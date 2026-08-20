@@ -8,6 +8,8 @@ var is_paused: bool = false
 @onready var save_button: Button = $Control/HBoxContainer/SaveButton
 @onready var load_button: Button = $Control/HBoxContainer/LoadButton
 @onready var item_description: Label = $Control/ItemDescription
+@onready var audio_stream_player: AudioStreamPlayer2D = $Control/AudioStreamPlayer
+
 
 func _ready() -> void:
 	hide_pause_menu()
@@ -53,3 +55,8 @@ func _on_load_button_pressed() -> void:
 
 func update_item_description(new_text: String) -> void:
 	item_description.text = new_text
+
+
+func play_audio(audio: AudioStream) -> void:
+	audio_stream_player.stream = audio
+	audio_stream_player.play()
