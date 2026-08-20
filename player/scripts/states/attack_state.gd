@@ -25,7 +25,9 @@ func enter() -> void:
 	audio.play()
 
 	await get_tree().create_timer(0.075).timeout
-	attack_hurtbox.monitoring = true
+
+	if attacking:
+		attack_hurtbox.monitoring = true
 
 
 func exit() -> void:

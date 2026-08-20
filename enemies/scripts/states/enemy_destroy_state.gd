@@ -25,6 +25,7 @@ func enter() -> void:
 
 	enemy.update_animation(anim_name)
 	enemy.animation_player.animation_finished.connect(_on_animation_finished)
+	enemy.hurtbox.monitoring = false
 
 
 func process(delta: float) -> EnemyState:
