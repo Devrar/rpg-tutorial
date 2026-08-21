@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cut1pato5uq3i" path="res://general_nodes/hitbox/hitbox.tscn" id="13_kb6p2"]
 [ext_resource type="Script" uid="uid://bqxbll43otql2" path="res://player/scripts/push_area.gd" id="14_32hag"]
 [ext_resource type="AudioStream" uid="uid://c57g131iw7qux" path="res://player/audio/hit_player.wav" id="14_wodsf"]
+[ext_resource type="Script" uid="uid://c54ih600srqq0" path="res://player/scripts/abilities.gd" id="17_tqiix"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0plbj"]
 
@@ -713,3 +714,6 @@ debug_color = Color(0.62534255, 0.5323743, 0, 0.41960785)
 
 [node name="EffectAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1441099779]
 libraries/ = SubResource("AnimationLibrary_s7qer")
+
+[node name="Abilities" type="Node" parent="." unique_id=1296135297]
+script = ExtResource("17_tqiix")
