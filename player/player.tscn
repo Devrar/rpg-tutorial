@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://bqxbll43otql2" path="res://player/scripts/push_area.gd" id="14_32hag"]
 [ext_resource type="AudioStream" uid="uid://c57g131iw7qux" path="res://player/audio/hit_player.wav" id="14_wodsf"]
 [ext_resource type="Script" uid="uid://c54ih600srqq0" path="res://player/scripts/abilities.gd" id="17_tqiix"]
+[ext_resource type="PackedScene" uid="uid://beubn65gpisem" path="res://general_nodes/item_magnet/item_magnet.tscn" id="18_e7oew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0plbj"]
 
@@ -608,6 +609,9 @@ _data = {
 &"default": SubResource("Animation_bjvpn")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6yegx"]
+radius = 54.00926
+
 [node name="Player" type="CharacterBody2D" unique_id=761234979]
 collision_mask = 16
 motion_mode = 1
@@ -717,3 +721,11 @@ libraries/ = SubResource("AnimationLibrary_s7qer")
 
 [node name="Abilities" type="Node" parent="." unique_id=1296135297]
 script = ExtResource("17_tqiix")
+
+[node name="ItemMagnet" parent="." unique_id=921840107 instance=ExtResource("18_e7oew")]
+magnet_strength = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemMagnet" unique_id=2037463999]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_6yegx")
+debug_color = Color(0.8176999, 0.20400001, 0.85, 0.2)
