@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://oop7ks5ijfnp"]
 
 [ext_resource type="Script" uid="uid://dslij0285px0x" path="res://player/scripts/abilities/boomerang.gd" id="1_cd8sf"]
+[ext_resource type="AudioStream" uid="uid://b6tjgtmmn03w7" path="res://player/audio/catch.wav" id="2_ko17o"]
 [ext_resource type="Texture2D" uid="uid://ch08117kilfn1" path="res://player/sprites/boomerang.png" id="2_sheky"]
 [ext_resource type="PackedScene" uid="uid://b8oqlnavohd8m" path="res://general_nodes/hurtbox/hurtbox.tscn" id="3_c7gwn"]
+[ext_resource type="AudioStream" uid="uid://bry7towo4htb5" path="res://player/audio/boomerang.wav" id="4_al46a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0plbj"]
 radius = 13.0
@@ -51,6 +53,7 @@ radius = 13.0
 
 [node name="Boomerang" type="Node2D" unique_id=93249242]
 script = ExtResource("1_cd8sf")
+catch_audio = ExtResource("2_ko17o")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1835209116]
 position = Vector2(0, -16)
@@ -75,3 +78,7 @@ collision_mask = 256
 position = Vector2(0, -17)
 shape = SubResource("CircleShape2D_c7gwn")
 debug_color = Color(0.9487358, 0.20016998, 0.28785065, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2024657739]
+stream = ExtResource("4_al46a")
+autoplay = true

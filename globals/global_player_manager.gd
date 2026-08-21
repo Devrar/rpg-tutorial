@@ -39,3 +39,8 @@ func set_as_parent(parent: Node2D) -> void:
 func unparent_player(parent: Node2D) -> void:
 	print("[!] Unparenting player")
 	parent.remove_child(player)
+
+
+func play_audio(audio: AudioStream) -> void:
+	player.audio.stream = audio
+	player.audio.play()

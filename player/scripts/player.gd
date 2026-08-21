@@ -17,6 +17,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine: PlayerStateMachine = $PlayerStateMachine
 @onready var hitbox: Hitbox = $Hitbox
+@onready var audio: AudioStreamPlayer2D = $Audio/AudioStreamPlayer2D
 
 
 func _ready() -> void:
