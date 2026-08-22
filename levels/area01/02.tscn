@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://csd3pi0y41ax4" path="res://levels/player_spawn.tscn" id="5_qsp5h"]
 [ext_resource type="PackedScene" uid="uid://c6yh1qkdiij3t" path="res://npc/npc.tscn" id="7_muqml"]
 [ext_resource type="Resource" uid="uid://byad2tnahmpob" path="res://npc/npc_resources/npc_01.tres" id="8_kn07k"]
+[ext_resource type="PackedScene" uid="uid://wl57ifln3odr" path="res://interactables/dialog/dialog_interaction.tscn" id="9_5eovd"]
 [ext_resource type="PackedScene" uid="uid://djvn5ynknp0gi" path="res://npc/npc_behavoir_patrol.tscn" id="9_dlp5d"]
 [ext_resource type="PackedScene" uid="uid://ce4rnfxblt7ab" path="res://npc/patrol_location.tscn" id="10_5eovd"]
 [ext_resource type="Resource" uid="uid://bt2n1027cekh1" path="res://npc/npc_resources/npc_02.tres" id="10_bemct"]
+[ext_resource type="Script" uid="uid://cmly5rss7hp0x" path="res://interactables/dungeon/scripts/dialog_text.gd" id="10_tg8qg"]
 
 [node name="02" type="Node2D" unique_id=2062805888]
 script = ExtResource("1_wvwyy")
@@ -36,17 +38,24 @@ position = Vector2(309, 104)
 collision_layer = 16
 npc_resource = ExtResource("8_kn07k")
 
-[node name="NpcBehavoirPatrol" parent="Npc" unique_id=869404130 instance=ExtResource("9_dlp5d")]
+[node name="DialogInteraction" parent="Npc" unique_id=813191894 instance=ExtResource("9_5eovd")]
 
-[node name="PatrolLocation2" parent="Npc/NpcBehavoirPatrol" unique_id=18647971 instance=ExtResource("10_5eovd")]
+[node name="DialogText" type="Node" parent="Npc/DialogInteraction" unique_id=1531700967]
+script = ExtResource("10_tg8qg")
+text = "Ciaoooooooooooooo"
+metadata/_custom_type_script = "uid://cmly5rss7hp0x"
+
+[node name="NpcBehavoirPatrol2" parent="Npc" unique_id=869404130 instance=ExtResource("9_dlp5d")]
+position = Vector2(-51, -39)
+
+[node name="PatrolLocation" parent="Npc/NpcBehavoirPatrol2" unique_id=1263838248 instance=ExtResource("10_5eovd")]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(-31, -5)
-wait_time = 1.0
-
-[node name="PatrolLocation" parent="Npc/NpcBehavoirPatrol" unique_id=1263838248 instance=ExtResource("10_5eovd")]
-modulate = Color(1, 1, 0, 1)
-position = Vector2(66, -4)
+position = Vector2(-11, -4)
 wait_time = 2.0
+
+[node name="PatrolLocation2" parent="Npc/NpcBehavoirPatrol2" unique_id=615534435 instance=ExtResource("10_5eovd")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(83, -4)
 
 [node name="Npc2" parent="." unique_id=315921738 instance=ExtResource("7_muqml")]
 position = Vector2(231, 182)

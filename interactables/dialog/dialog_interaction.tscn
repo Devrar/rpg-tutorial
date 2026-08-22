@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://wl57ifln3odr"]
+
+[ext_resource type="Script" uid="uid://62ud1roaw20m" path="res://interactables/dialog/scripts/dialog_interaction.gd" id="1_ea8i5"]
+[ext_resource type="Texture2D" uid="uid://0a3cacpvacjn" path="res://interactables/dialog/sprites/dialog_interactable.png" id="1_ls8k1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0plbj"]
+size = Vector2(44, 32)
+
+[sub_resource type="Animation" id="Animation_ls8k1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ea8i5"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4cr4e"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, -55), Vector2(2, -50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jacjr"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, -50), Vector2(2, -55)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jacjr"]
+_data = {
+&"RESET": SubResource("Animation_ls8k1"),
+&"default": SubResource("Animation_ea8i5"),
+&"hide": SubResource("Animation_4cr4e"),
+&"show": SubResource("Animation_jacjr")
+}
+
+[node name="DialogInteraction" type="Area2D" unique_id=813191894]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_ea8i5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=568145695]
+shape = SubResource("RectangleShape2D_0plbj")
+debug_color = Color(0.28224, 0.63, 0.17639998, 0.12941177)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169703078]
+position = Vector2(2, -50)
+texture = ExtResource("1_ls8k1")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1442447973]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_jacjr")
+autoplay = &"default"

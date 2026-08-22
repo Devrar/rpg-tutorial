@@ -23,7 +23,7 @@ func _ready() -> void:
 	target = patrol_locations[0]
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	if npc.global_position.distance_to(target.target_position) < 1:
@@ -53,7 +53,6 @@ func start() -> void:
 		return
 	
 	# idle phase
-	npc.global_position = target.target_position
 	npc.state = "idle"
 	npc.velocity = Vector2.ZERO
 	npc.update_animation()
@@ -70,7 +69,7 @@ func start() -> void:
 		return
 
 	npc.state = "walk"
-	var direction = global_position.direction_to(target.target_position)
+	var direction = npc.global_position.direction_to(target.target_position)
 	npc.direction = direction
 	npc.velocity = walk_speed * direction
 	npc.update_direction(target.target_position)
