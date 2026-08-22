@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" format=3 uid="uid://byad2tnahmpob"]
+
+[ext_resource type="Script" uid="uid://m3tp5unpegsq" path="res://npc/scripts/npc_resource.gd" id="1_2vtcl"]
+[ext_resource type="Texture2D" uid="uid://y46xmhbpdb4w" path="res://npc/sprites/portraits/npc_portrait_01.png" id="1_o8nri"]
+[ext_resource type="Texture2D" uid="uid://3el5rdyswiro" path="res://npc/sprites/npc_sprite.png" id="3_a2ymk"]
+
+[resource]
+script = ExtResource("1_2vtcl")
+npc_name = "Oren"
+sprite = ExtResource("3_a2ymk")
+portrait = ExtResource("1_o8nri")
+metadata/_custom_type_script = "uid://m3tp5unpegsq"

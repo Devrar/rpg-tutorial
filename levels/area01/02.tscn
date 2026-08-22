@@ -2,11 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cgyx6volpmtau" path="res://tile_maps/grass_01.tscn" id="1_a1gxs"]
 [ext_resource type="Script" uid="uid://brpvkbj8ht6co" path="res://levels/scripts/level.gd" id="1_wvwyy"]
-[ext_resource type="PackedScene" uid="uid://bq55qpw2rtjc3" path="res://enemies/slime/slime.tscn" id="2_iwepj"]
 [ext_resource type="AudioStream" uid="uid://inld50op1x14" path="res://levels/music/example_music_01.ogg" id="2_muqml"]
 [ext_resource type="PackedScene" uid="uid://tlglnv37o3g6" path="res://props/plants/plant.tscn" id="3_onu17"]
 [ext_resource type="PackedScene" uid="uid://c8e2c6ar5xy4j" path="res://levels/level_transition.tscn" id="4_8v06e"]
 [ext_resource type="PackedScene" uid="uid://csd3pi0y41ax4" path="res://levels/player_spawn.tscn" id="5_qsp5h"]
+[ext_resource type="PackedScene" uid="uid://c6yh1qkdiij3t" path="res://npc/npc.tscn" id="7_muqml"]
+[ext_resource type="Resource" uid="uid://byad2tnahmpob" path="res://npc/npc_resources/npc_01.tres" id="8_kn07k"]
+[ext_resource type="PackedScene" uid="uid://djvn5ynknp0gi" path="res://npc/npc_behavoir_patrol.tscn" id="9_dlp5d"]
+[ext_resource type="PackedScene" uid="uid://ce4rnfxblt7ab" path="res://npc/patrol_location.tscn" id="10_5eovd"]
+[ext_resource type="Resource" uid="uid://bt2n1027cekh1" path="res://npc/npc_resources/npc_02.tres" id="10_bemct"]
 
 [node name="02" type="Node2D" unique_id=2062805888]
 script = ExtResource("1_wvwyy")
@@ -14,15 +18,6 @@ music = ExtResource("2_muqml")
 
 [node name="Grass-01" parent="." unique_id=466529726 instance=ExtResource("1_a1gxs")]
 layer_0/tile_data = PackedInt32Array(0, 720896, 7, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 196608, 4, 589824, 196608, 5, 1, 786432, 7, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 262144, 4, 589825, 262144, 5, 2, 851968, 7, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 131072, 4, 589826, 131072, 5, 3, 917504, 7, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 196608, 4, 589827, 196608, 5, 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 196612, 0, 0, 262148, 0, 0, 327684, 0, 0, 393220, 0, 0, 458756, 0, 0, 524292, 262144, 4, 589828, 262144, 5, 5, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 131072, 4, 589829, 131072, 5, 6, 0, 0, 65542, 0, 0, 131078, 0, 0, 196614, 0, 0, 262150, 0, 0, 327686, 0, 0, 393222, 0, 0, 458758, 0, 0, 524294, 196608, 4, 589830, 196608, 5, 7, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 262144, 4, 589831, 262144, 5, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 131072, 4, 589832, 131072, 5, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 0, 0, 524297, 196608, 4, 589833, 196608, 5, 10, 655360, 7, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0, 458762, 0, 0, 524298, 262144, 4, 589834, 262144, 5, 11, 720896, 7, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524299, 131072, 4, 589835, 131072, 5, 12, 786432, 7, 65548, 0, 0, 131084, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0, 524300, 131072, 4, 589836, 131072, 5, 13, 851968, 7, 65549, 0, 0, 131085, 0, 0, 196621, 0, 0, 262157, 0, 0, 327693, 0, 0, 393229, 0, 0, 458765, 0, 0, 524301, 196608, 4, 589837, 196608, 5, 14, 917504, 7, 65550, 0, 0, 131086, 0, 0, 196622, 0, 0, 262158, 0, 0, 327694, 0, 0, 393230, 0, 0, 458766, 0, 0, 524302, 262144, 4, 589838, 262144, 5, 15, 655360, 5, 65551, 655360, 6, 131087, 655360, 5, 196623, 655360, 6, 262159, 655360, 5, 327695, 655360, 6, 393231, 655360, 5, 458767, 655360, 6, 524303, 655360, 5, 589839, 655360, 6, -65538, 655360, 5, -2, 655360, 5, 65534, 655360, 5, 131070, 655360, 5, 196606, 655360, 5, 262142, 655360, 5, 327678, 655360, 5, 393214, 655360, 5, 458750, 655360, 5, 524286, 655360, 5, 589822, 655360, 5, 655358, 655360, 5, -65537, 655360, 5, -1, 655360, 6, 65535, 655360, 7, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 131072, 4, 655359, 131072, 5, -131072, 720896, 5, -65536, 720896, 6, -131071, 786432, 5, -65535, 786432, 6, -131070, 851968, 5, -65534, 851968, 6, -131069, 917504, 5, -65533, 917504, 6, -131068, 0, 0, -65532, 0, 0, -131067, 0, 0, -65531, 0, 0, -131066, 0, 0, -65530, 0, 0, -131065, 0, 0, -65529, 0, 0, -131064, 0, 0, -65528, 0, 0, -131063, 0, 0, -65527, 0, 0, -131062, 655360, 5, -65526, 655360, 6, -131061, 720896, 5, -65525, 720896, 6, -131060, 786432, 5, -65524, 786432, 6, -131059, 851968, 5, -65523, 851968, 6, -131058, 917504, 5, -65522, 917504, 6, -131057, 655360, 5, -65521, 655360, 6)
-
-[node name="Slime" parent="." unique_id=777244423 instance=ExtResource("2_iwepj")]
-position = Vector2(143, 133)
-
-[node name="Slime2" parent="." unique_id=1000055369 instance=ExtResource("2_iwepj")]
-position = Vector2(172, 124)
-
-[node name="Slime3" parent="." unique_id=1315138188 instance=ExtResource("2_iwepj")]
-position = Vector2(325, 194)
 
 [node name="Plant" parent="." unique_id=333319832 instance=ExtResource("3_onu17")]
 position = Vector2(227, 15)
@@ -34,4 +29,36 @@ size = 6
 side = 2
 
 [node name="PlayerSpawn" parent="." unique_id=1270944581 instance=ExtResource("5_qsp5h")]
-position = Vector2(222, -14)
+position = Vector2(126, 111)
+
+[node name="Npc" parent="." unique_id=895617414 instance=ExtResource("7_muqml")]
+position = Vector2(309, 104)
+collision_layer = 16
+npc_resource = ExtResource("8_kn07k")
+
+[node name="NpcBehavoirPatrol" parent="Npc" unique_id=869404130 instance=ExtResource("9_dlp5d")]
+
+[node name="PatrolLocation2" parent="Npc/NpcBehavoirPatrol" unique_id=18647971 instance=ExtResource("10_5eovd")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-31, -5)
+wait_time = 1.0
+
+[node name="PatrolLocation" parent="Npc/NpcBehavoirPatrol" unique_id=1263838248 instance=ExtResource("10_5eovd")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(10, 13)
+wait_time = 2.0
+
+[node name="Npc2" parent="." unique_id=315921738 instance=ExtResource("7_muqml")]
+position = Vector2(231, 182)
+collision_layer = 16
+npc_resource = ExtResource("10_bemct")
+
+[node name="NpcBehavoirPatrol" parent="Npc2" unique_id=1510854268 instance=ExtResource("9_dlp5d")]
+
+[node name="PatrolLocation" parent="Npc2/NpcBehavoirPatrol" unique_id=1161623706 instance=ExtResource("10_5eovd")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-11, -4)
+
+[node name="PatrolLocation2" parent="Npc2/NpcBehavoirPatrol" unique_id=1290878478 instance=ExtResource("10_5eovd")]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(91, -16)

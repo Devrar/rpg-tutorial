@@ -74,7 +74,7 @@ func _snap_to_grid() -> void:
 	position.y = round(position.y / 16) * 16
 
 
-func _player_entered(player: Node2D) -> void:
+func _player_entered(_player: Node2D) -> void:
 	GlobalLevelManager.load_new_level(level, target_transition_area, get_offset())
 
 
