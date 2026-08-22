@@ -15,6 +15,7 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		child_entered_tree.connect(gather_patrol_locations)
 		child_order_changed.connect(gather_patrol_locations)
+		return
 	super()
 	if patrol_locations.size() == 0:
 		process_mode = Node.PROCESS_MODE_DISABLED
@@ -34,9 +35,8 @@ func gather_patrol_locations(_node: Node = null) -> void:
 	for c in get_children():
 		if c is PatrolLocation:
 			patrol_locations.append(c)
-	if patrol_locations.size() > 0:
-		process_mode = Node.PROCESS_MODE_INHERIT
-		if Engine.is_editor_hint():
+	if Engine.is_editor_hint():
+		if patrol_locations.size() > 0:
 			for i in range(patrol_locations.size()):
 				var p = patrol_locations[i] as PatrolLocation
 				if not p.transform_changed.is_connected(gather_patrol_locations):

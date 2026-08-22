@@ -45,7 +45,7 @@ wait_time = 1.0
 
 [node name="PatrolLocation" parent="Npc/NpcBehavoirPatrol" unique_id=1263838248 instance=ExtResource("10_5eovd")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(10, 13)
+position = Vector2(66, -4)
 wait_time = 2.0
 
 [node name="Npc2" parent="." unique_id=315921738 instance=ExtResource("7_muqml")]
@@ -61,4 +61,4 @@ position = Vector2(-11, -4)
 
 [node name="PatrolLocation2" parent="Npc2/NpcBehavoirPatrol" unique_id=1290878478 instance=ExtResource("10_5eovd")]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(91, -16)
+position = Vector2(83, -4)
